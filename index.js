@@ -6,13 +6,12 @@ let questionButton2 = document.querySelector("#answer2");
 let questionButton3 = document.querySelector("#answer3");
 let questionButton4 = document.querySelector("#answer4");
 let timeE1 = document.querySelector("#timer");
-let scoreBoard = document.querySelector("#score");
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 
-let scores = []
+
 let timer = 10
-scoreBoard.textContent = score
+
 
 
 let timerID = setInterval(function(){
@@ -46,10 +45,10 @@ function renderQuestion(){
 
     question.textContent = questions[currentQuestion].question
     questionButton1.textContent = questions[currentQuestion].answers[0];
-    questionButton2.textContent = questions[currentQuestion].answers[1]
-    questionButton3.textContent = questions[currentQuestion].answers[2]
-    questionButton4.textContent = questions[currentQuestion].answers[3]
-    console.log("correct answer:" + questions[currentQuestion].correctAnswer)
+    questionButton2.textContent = questions[currentQuestion].answers[1];
+    questionButton3.textContent = questions[currentQuestion].answers[2];
+    questionButton4.textContent = questions[currentQuestion].answers[3];
+    console.log("correct answer:" + questions[currentQuestion].correctAnswer);
 
 }
 
