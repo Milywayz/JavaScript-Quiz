@@ -1,7 +1,6 @@
 
 
 let quizDiv = document.querySelector("#quiz");
-let questionShow = document.querySelector("currentQuestion")
 let questionButton1 = document.querySelector("#answer1");
 let questionButton2 = document.querySelector("#answer2");
 let questionButton3 = document.querySelector("#answer3");
@@ -32,7 +31,7 @@ renderQuestion();
 
 function renderQuestion(){
 
-    questionShow.textContent = questions[currentQuestion].question
+    question.textContent = questions[currentQuestion].question
     questionButton1.textContent = questions[currentQuestion].answers[0];
     questionButton2.textContent = questions[currentQuestion].answers[1]
     questionButton3.textContent = questions[currentQuestion].answers[2]
