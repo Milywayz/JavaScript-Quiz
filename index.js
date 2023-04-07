@@ -5,13 +5,19 @@ let questionButton1 = document.querySelector("#answer1");
 let questionButton2 = document.querySelector("#answer2");
 let questionButton3 = document.querySelector("#answer3");
 let questionButton4 = document.querySelector("#answer4");
+let timeE1 = document.querySelector("#timer");
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
-let timer = 90
+let timer = 10
 
 let timerID = setInterval(function(){
 
     timer -=1
+    timeE1.textContent = timer 
+    if (timer === 0){
+        clearInterval(timerID);
+
+    }
     console.log(timer);
 
 }, 1000)
@@ -23,6 +29,7 @@ let timerID = setInterval(function(){
 let questions = [{question: "What do you spawn with in a new world in Minecraft?" , answers: ["A Pickaxe" , "An Axe" , "Bread" , "Nothing"], correctAnswer: "Nothing" },
                 {question: "How many hearts of damage do you take when you fall 10 blocks in Minecraft with no protection?" , answers: ["2 Full Hearts" , "1 Full Hearts and a Half" , "3 Full Hearts and a Half" , "3 Full Hearts"], correctAnswer: "3 Full Hearts and a Half" },
                 {question: "What is Minecraft's rarest biome?" , answers: ["Ice Spikes Biome" , "Bamboo Jungle Biome" , "Mesa Biome" , "Mushroom Fields Biome"], correctAnswer: "Mushroom Fields Biome" },
+                {question: "How long is one Minecraft day in real time?" , answers: ["15 Minutes" , "17 Minutes" , "19 Minutes" , "20 Minutes"], correctAnswer: "17 Minutes" },
 
 ]
 
