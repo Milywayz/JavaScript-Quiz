@@ -6,14 +6,19 @@ let questionButton2 = document.querySelector("#answer2");
 let questionButton3 = document.querySelector("#answer3");
 let questionButton4 = document.querySelector("#answer4");
 let timeE1 = document.querySelector("#timer");
+let scoreBoard = document.querySelector("#score");
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
+
+let scores = []
 let timer = 10
+scoreBoard.textContent = score
+
 
 let timerID = setInterval(function(){
 
-    timer -=1
     timeE1.textContent = timer 
+    timer -=1
     if (timer === 0){
         timeE1.textContent = "";
         clearInterval(timerID);
@@ -62,7 +67,6 @@ quizDiv.addEventListener("click" , function(event){
     }
 
 })
-
 
 
 
