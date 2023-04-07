@@ -15,6 +15,7 @@ let timerID = setInterval(function(){
     timer -=1
     timeE1.textContent = timer 
     if (timer === 0){
+        timeE1.textContent = "";
         clearInterval(timerID);
 
     }
