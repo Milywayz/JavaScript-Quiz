@@ -6,6 +6,7 @@ let questionButton2 = document.querySelector("#answer2");
 let questionButton3 = document.querySelector("#answer3");
 let questionButton4 = document.querySelector("#answer4");
 let timeE1 = document.querySelector("#timer");
+let correctAnswer = document.querySelector("#correctAnswer")
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 
@@ -51,6 +52,7 @@ let questions = [{question: "What do you spawn with in a new world in Minecraft?
 ]
 
 currentQuestion = 0
+nextQuestion = 0
 renderQuestion();
 
 function renderQuestion(){
@@ -61,6 +63,7 @@ function renderQuestion(){
     questionButton3.textContent = questions[currentQuestion].answers[2];
     questionButton4.textContent = questions[currentQuestion].answers[3];
     console.log("correct answer:" + questions[currentQuestion].correctAnswer);
+    correctAnswer.textContent =  questions[nextQuestion].correctAnswer 
 
 }
 
@@ -73,7 +76,7 @@ quizDiv.addEventListener("click" , function(event){
         console.log("correct answer:" +  questions[currentQuestion].correctAnswer);
         currentQuestion++
         renderQuestion();
-
+        
 
     }
 
