@@ -1,5 +1,5 @@
 
-
+let startQuizB = document.querySelector("#startQuizB")
 let quizDiv = document.querySelector("#quiz");
 let questionButton1 = document.querySelector("#answer1");
 let questionButton2 = document.querySelector("#answer2");
@@ -10,7 +10,14 @@ let correctAnswer = document.querySelector("#correctAnswer")
 let incorrectAnswer = document.querySelector("incorrectAnswer")
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
+// startQuizB.addEventListener("click"), function(event){
+//     let eventEl = event.target
+//     if (eventEl.matches("button")){
+        
 
+//     }
+
+// }
 
 let timer = 90
 startTimer();
@@ -36,7 +43,6 @@ function startTimer(){
     }, 1000)
 }
 
-// timer -=10
 // clearInterval(timerID)
 
 
@@ -77,15 +83,17 @@ quizDiv.addEventListener("click" , function(event){
         console.log("clicked!")
         console.log("value:" +eventEl.innerText);
         console.log("correct answer:" +  questions[currentQuestion].correctAnswer);
-        incorrectAnswer =  questions[currentQuestion].incorrectAnswer
-        timer -= 10
         currentQuestion++
         renderQuestion();
-        
-
     }
+    if (eventEl.matches("incorrectAnswer")) {
 
-})
+        timer -= 10
+    }
+        
+    })
+
+
 
 
 
