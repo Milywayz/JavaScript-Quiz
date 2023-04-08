@@ -10,6 +10,12 @@ let correctAnswer = document.querySelector("#correctAnswer")
 let incorrectAnswer = document.querySelector("incorrectAnswer")
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
+// Need help to start off the quiz with only a start button with some more added text then start the quiz and timer after that
+// Need help switching and adding a high score page
+// Need help adding local storage when you enter high scores
+// If there is time then I would want some help add css into java for all of this 
+
+
 // startQuizB.addEventListener("click"), function(event){
 //     let eventEl = event.target
 //     if (eventEl.matches("button")){
@@ -43,8 +49,6 @@ function startTimer(){
     }, 1000)
 }
 
-// clearInterval(timerID)
-
 
 let questions = [{question: "What do you spawn with in a new world in Minecraft?" , answers: ["A Wooden Pickaxe" , "An Stone Axe" , "1 Piece of Bread" , "Nothing"], correctAnswer: "Nothing" },
                 {question: "How many hearts of damage do you take when you fall 10 blocks in Minecraft with no protection?" , answers: ["2 Full Hearts" , "1 Full Hearts and a Half" , "3 Full Hearts and a Half" , "3 Full Hearts"], correctAnswer: "3 Full Hearts and a Half" },
@@ -75,7 +79,8 @@ function renderQuestion(){
 
 }
 
-
+// Need help showing the correctAnswer if you clicked the right answer 
+// Need help only removing 10sec if you click the wrong answer
 quizDiv.addEventListener("click" , function(event){
     let eventEl = event.target
 
