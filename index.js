@@ -8,6 +8,7 @@ let questionButton4 = document.querySelector("#answer4");
 let timeE1 = document.querySelector("#timer");
 let correctAnswer = document.querySelector("#correctAnswer")
 let incorrectAnswer = document.querySelector("incorrectAnswer")
+let highScore = document.querySelector("#highScore")
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 // Need help to start off the quiz with only a start button with some more added text then start the quiz and timer after that
