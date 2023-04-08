@@ -63,13 +63,12 @@ let questions = [{question: "What do you spawn with in a new world in Minecraft?
                 {question: "What item do you give frogs in Minecraft for breeding?" , answers: ["Lily-Pads" , "Seeds" , "Spore Blossoms" , "Slime-Balls"], correctAnswer: "Slime-Balls" }
 
 ]
-
 currentQuestion = 0
 nextQuestion = 0
 renderQuestion();
 
 function renderQuestion(){
-
+    
     question.textContent = questions[currentQuestion].question
     questionButton1.textContent = questions[currentQuestion].answers[0];
     questionButton2.textContent = questions[currentQuestion].answers[1];
@@ -77,8 +76,9 @@ function renderQuestion(){
     questionButton4.textContent = questions[currentQuestion].answers[3];
     console.log("correct answer:" + questions[currentQuestion].correctAnswer);
     correctAnswer.textContent =  questions[nextQuestion].correctAnswer 
-
+    
 }
+questions[currentQuestion].setAttribute("style" , "margin: auto" , "display: block");
 
 // Need help showing the correctAnswer if you clicked the right answer 
 // Need help only removing 10sec if you click the wrong answer
