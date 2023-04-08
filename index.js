@@ -78,7 +78,7 @@ function renderQuestion(){
     correctAnswer.textContent =  questions[nextQuestion].correctAnswer 
     
 }
-questions[currentQuestion].setAttribute("style" , "margin: auto" , "display: block");
+
 
 // Need help showing the correctAnswer if you clicked the right answer 
 // Need help only removing 10sec if you click the wrong answer
