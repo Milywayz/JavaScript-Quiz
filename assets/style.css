@@ -18,3 +18,7 @@ section button{
     display: block;
 
 }
+
+.hide {
+    display: none;
+}

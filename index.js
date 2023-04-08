@@ -1,5 +1,5 @@
 
-let startQuizB = document.querySelector("#startQuizB")
+let startQuizB = document.querySelector("#startQuiz")
 let quizDiv = document.querySelector("#quiz");
 let questionButton1 = document.querySelector("#answer1");
 let questionButton2 = document.querySelector("#answer2");
@@ -7,7 +7,6 @@ let questionButton3 = document.querySelector("#answer3");
 let questionButton4 = document.querySelector("#answer4");
 let timeE1 = document.querySelector("#timer");
 let correctAnswer = document.querySelector("#correctAnswer")
-let incorrectAnswer = document.querySelector("incorrectAnswer")
 let highScore = document.querySelector("#highScore")
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
@@ -17,35 +16,36 @@ let highScore = document.querySelector("#highScore")
 // If there is time then I would want some help add css into java for all of this 
 
 
-// startQuizB.addEventListener("click"), function(event){
-//     let eventEl = event.target
-//     if (eventEl.matches("button")){
-        
+startQuizB.addEventListener("click", function(){
 
-//     }
+    quizDiv.classList.remove("hide")
+    startQuizB.classList.add("hide")
+    startTimer();
+   
 
-// }
+})
 
 let timer = 90
-startTimer();
+let timerID;
 
 function startTimer(){
     
     timeE1.textContent = timer;
 
-    let timerID = setInterval(function(){
+    timerID = setInterval(function(){
     
         timer -=1
         timeE1.textContent = timer;
 
-        if (timer <= 0){
+        if (timer <= 0 || currentQuestion === questions.length){
             
             clearInterval(timerID);
+            endQuiz();
            
             
     
         }
-        console.log(timer);
+        //console.log(timer);
     
     }, 1000)
 }
@@ -74,8 +74,7 @@ function renderQuestion(){
     questionButton2.textContent = questions[currentQuestion].answers[1];
     questionButton3.textContent = questions[currentQuestion].answers[2];
     questionButton4.textContent = questions[currentQuestion].answers[3];
-    console.log("correct answer:" + questions[currentQuestion].correctAnswer);
-    correctAnswer.textContent =  questions[nextQuestion].correctAnswer 
+    // console.log("correct answer:" + questions[currentQuestion].correctAnswer);
     
 }
 
@@ -84,20 +83,30 @@ function renderQuestion(){
 // Need help only removing 10sec if you click the wrong answer
 quizDiv.addEventListener("click" , function(event){
     let eventEl = event.target
-
+    
     if(eventEl.matches("button")){
-        console.log("clicked!")
-        console.log("value:" +eventEl.innerText);
-        console.log("correct answer:" +  questions[currentQuestion].correctAnswer);
+        // console.log("clicked!")
+        // console.log("correct answer:" +  questions[currentQuestion].correctAnswer);
+        if (eventEl.innerText === questions[currentQuestion].correctAnswer){
+            correctAnswer.textContent =  questions[currentQuestion].correctAnswer; 
+
+        } else {
+            correctAnswer.textContent =  "Wrong Answer"; 
+            timer -= 10;
+
+        }
+
         currentQuestion++
         renderQuestion();
     }
-    if (eventEl.matches("incorrectAnswer")) {
+    
+    
+})
 
-        timer -= 10
-    }
+    function endQuiz() {
         
-    })
+        localStorage.setItem("highScores" , JSON.stringify([{"initials": "dre", "score": timer}]))
+    }
 
 
 
@@ -106,5 +115,3 @@ quizDiv.addEventListener("click" , function(event){
 
 
 // some button that saves
-
-// localStorage.setItem("highScores" , JSON.stringify([{"initials": "dre", "score": 80}]))
