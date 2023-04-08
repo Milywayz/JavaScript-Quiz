@@ -60,7 +60,7 @@ let questions = [{question: "What do you spawn with in a new world in Minecraft?
                 {question: "How many blocks of Diamonds would it take to build a full beacon in Minecraft" , answers: ["164 Blocks" , "168 Blocks" , "166 Blocks" , "165 Blocks"], correctAnswer: "164 Blocks" },
                 {question: "What is the chance of a tamed wolf killing a wither skeleton and it dropping a wither skeleton skull in Minecraft?" , answers: ["1%" , "1.5%" , "2%" , "2.5%"], correctAnswer: "2.5" },
                 {question: "How big of a nether portal do you need in Minecraft to transfer a ghast into the Over-World at minimum?" , answers: ["It's not possible" , "4x4" , "5x5" , "7x7"], correctAnswer: "5x5"},
-                {question: "What item do you give frogs in Minecraft for breeding?" , answers: ["Lily-Pads" , "Seeds" , "Spore Blossoms" , "Slime-Balls"], correctAnswer: "Slime-Balls" }
+                {question: "What item do you give frogs in Minecraft for breeding?" , answers: ["Lily Pads" , "Seeds" , "Spore Blossoms" , "Slime Balls"], correctAnswer: "Slime Balls" }
 
 ]
 currentQuestion = 0
