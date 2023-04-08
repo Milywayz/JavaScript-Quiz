@@ -11,21 +11,27 @@ let timeE1 = document.querySelector("#timer");
 
 
 let timer = 10
+startTimer();
 
+function startTimer(){
+    
+    timeE1.textContent = timer;
 
+    let timerID = setInterval(function(){
+    
+        timer -=1
+        timeE1.textContent = timer;
 
-let timerID = setInterval(function(){
-
-    timeE1.textContent = timer 
-    timer -=1
-    if (timer === 0){
-        timeE1.textContent = "";
-        clearInterval(timerID);
-
-    }
-    console.log(timer);
-
-}, 1000)
+        if (timer <= 0){
+            
+            clearInterval(timerID);
+            
+    
+        }
+        console.log(timer);
+    
+    }, 1000)
+}
 
 // timer -=10
 // clearInterval(timerID)
