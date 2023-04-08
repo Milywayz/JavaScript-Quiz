@@ -54,7 +54,7 @@ function startTimer(){
 let questions = [{question: "What do you spawn with in a new world in Minecraft?" , answers: ["A Wooden Pickaxe" , "An Stone Axe" , "1 Piece of Bread" , "Nothing"], correctAnswer: "Nothing" },
                 {question: "How many hearts of damage do you take when you fall 10 blocks in Minecraft with no protection?" , answers: ["2 Full Hearts" , "1 Full Hearts and a Half" , "3 Full Hearts and a Half" , "3 Full Hearts"], correctAnswer: "3 Full Hearts and a Half" },
                 {question: "What is Minecraft's rarest biome?" , answers: ["Ice Spikes Biome" , "Bamboo Jungle Biome" , "Mesa Biome" , "Mushroom Fields Biome"], correctAnswer: "Mushroom Fields Biome" },
-                {question: "How long is one Minecraft day in real time?" , answers: ["15 Minutes" , "17 Minutes" , "19 Minutes" , "20 Minutes"], correctAnswer: "20 Minutes" },
+                {question: "How long is one full day cycle in Minecraft?" , answers: ["15 Minutes" , "17 Minutes" , "19 Minutes" , "20 Minutes"], correctAnswer: "20 Minutes" },
                 {question: "What are the chances in Minecraft that the end portal frame containing exactly  0 eyes." , answers: ["28%" , "35%" , "25%" , "31%"], correctAnswer: "28%" },
                 {question: "How long does it take to break obsidian by hand in Minecraft?" , answers: ["300 Seconds" , "250 Seconds" , "200 Seconds" , "225 Seconds"], correctAnswer: "250 Seconds"},
                 {question: "How many blocks of Diamonds would it take to build a full beacon in Minecraft" , answers: ["164 Blocks" , "168 Blocks" , "166 Blocks" , "165 Blocks"], correctAnswer: "164 Blocks" },
