@@ -7,11 +7,12 @@ let questionButton3 = document.querySelector("#answer3");
 let questionButton4 = document.querySelector("#answer4");
 let timeE1 = document.querySelector("#timer");
 let correctAnswer = document.querySelector("#correctAnswer")
+let incorrectAnswer = document.querySelector("incorrectAnswer")
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 
 
-let timer = 10
+let timer = 90
 startTimer();
 
 function startTimer(){
@@ -26,6 +27,7 @@ function startTimer(){
         if (timer <= 0){
             
             clearInterval(timerID);
+           
             
     
         }
@@ -69,11 +71,14 @@ function renderQuestion(){
 
 
 quizDiv.addEventListener("click" , function(event){
+    let eventEl = event.target
 
-    if(event.target.matches("button")){
+    if(eventEl.matches("button")){
         console.log("clicked!")
-        console.log("value:" +event.target.innerText);
+        console.log("value:" +eventEl.innerText);
         console.log("correct answer:" +  questions[currentQuestion].correctAnswer);
+        incorrectAnswer =  questions[currentQuestion].incorrectAnswer
+        timer -= 10
         currentQuestion++
         renderQuestion();
         
@@ -81,6 +86,7 @@ quizDiv.addEventListener("click" , function(event){
     }
 
 })
+
 
 
 
