@@ -1,3 +1,7 @@
+body{
+    background-color: lightblue;
+}
+
 div button {
     border-style: solid;
     background-color: firebrick;
@@ -6,6 +10,14 @@ div button {
     border-radius: 10px;
     margin-left: 40em;
     display: block;
+}
+section  {
+    text-align: center;
+}
+section h1 {
+    font-size: 3em;
+    background-color: rgb(116, 116, 116);
+    margin: auto;
 }
 
 section button{

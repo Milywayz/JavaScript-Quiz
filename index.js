@@ -88,10 +88,10 @@ quizDiv.addEventListener("click" , function(event){
         // console.log("clicked!")
         // console.log("correct answer:" +  questions[currentQuestion].correctAnswer);
         if (eventEl.innerText === questions[currentQuestion].correctAnswer){
-            correctAnswer.textContent =  questions[currentQuestion].correctAnswer; 
+            correctAnswer.textContent =  "Correct Answer: " + questions[currentQuestion].correctAnswer; 
 
         } else {
-            correctAnswer.textContent =  "Wrong Answer"; 
+            correctAnswer.textContent =  "Wrong Answer"
             timer -= 10;
 
         }
