@@ -10,6 +10,7 @@ let correctAnswer = document.querySelector("#correctAnswer")
 let highScore = document.querySelector("#highScore")
 let highScoreInput = document.querySelector("#highScoreInput")
 let timerInput = document.querySelector("#timerInput")
+
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 // Need help to start off the quiz with only a start button with some more added text then start the quiz and timer after that
@@ -92,10 +93,6 @@ quizDiv.addEventListener("click" , function(event){
         if (eventEl.innerText === questions[currentQuestion].correctAnswer){
             correctAnswer.textContent =  "Correct Answer: " + questions[currentQuestion].correctAnswer; 
             
-        }
-        if (currentQuestion === questions.length) {
-                
-            endQuiz();
         }
         else {
             correctAnswer.textContent =  "Wrong Answer"
