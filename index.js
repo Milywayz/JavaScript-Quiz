@@ -10,6 +10,7 @@ let correctAnswer = document.querySelector("#correctAnswer")
 let highScore = document.querySelector("#highScore")
 let highScoreInput = document.querySelector("#highScoreInput")
 let timerInput = document.querySelector("#timerInput")
+let highScorePage = document.querySelector("#highScorePage")
 
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
@@ -17,6 +18,23 @@ let timerInput = document.querySelector("#timerInput")
 // Need help switching and adding a high score page
 // Need help adding local storage when you enter high scores
 // If there is time then I would want some help add css into java for all of this 
+
+
+highScore.addEventListener("click", function(){
+    startQuizB.classList.add("hide")
+    highScorePage.classList.remove("hide")
+    highScore.classList.add("hide")
+})
+
+highScorePage.addEventListener("click", function(){
+
+    highScorePage.classList.add("hide")
+    startQuizB.classList.remove("hide")
+    highScore.classList.remove("hide")
+    highScoreInput.classList.add("hide")
+
+})
+
 
 
 startQuizB.addEventListener("click", function(){
@@ -112,6 +130,7 @@ quizDiv.addEventListener("click" , function(event){
         localStorage.setItem("highScores" , JSON.stringify([{"initials": "dre", "score": timer}]))
         quizDiv.classList.add("hide")
         highScoreInput.classList.remove("hide")
+        highScorePage.classList.add("hide")
     }
 
 

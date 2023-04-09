@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <button>View High Scores</button>
+        <button id="highScore">View High Scores</button>
     </header>
 
     <section id="startQuiz">
@@ -26,7 +26,7 @@
 
     <div id="quiz" class="hide">
 
-        <h2 id="timer" id="highScore"></h2>
+        <h2 id="timer"></h2>
         <h1 id="question"></h1>
         
             <button id="answer1"></button>
@@ -43,10 +43,12 @@
         <h2>Please enter your initials down below to save your new Highscore!</h2>
         <input id="timerInput"></input>
         <input type="submit" />
-
-
-
     </section>
+
+    <div id="highScorePage" class="hide">
+        <button id="return">Return</button>
+        <h3>These are all your High Scores!</h3>
+    </div>
 
 
     <script src="./index.js"></script>

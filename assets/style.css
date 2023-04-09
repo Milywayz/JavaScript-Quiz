@@ -16,7 +16,13 @@ section  {
 section h1 {
     font-size: 3em;
     background-color: #80ced6;
-    margin: 0px;
+    margin: auto;
+}
+h3{
+    font-size: 3em;
+    background-color: #80ced6;
+    margin: auto;
+    text-align: center;
 }
 
 section button{
