@@ -9,6 +9,7 @@ let timeE1 = document.querySelector("#timer");
 let correctAnswer = document.querySelector("#correctAnswer")
 let highScore = document.querySelector("#highScore")
 let highScoreInput = document.querySelector("#highScoreInput")
+let timerInput = document.querySelector("#timerInput")
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 // Need help to start off the quiz with only a start button with some more added text then start the quiz and timer after that
@@ -26,7 +27,7 @@ startQuizB.addEventListener("click", function(){
 
 })
 
-let timer = 90
+let timer = 120
 let timerID;
 
 function startTimer(){
@@ -39,9 +40,10 @@ function startTimer(){
         timeE1.textContent = timer;
 
         if (timer <= 0 || currentQuestion === questions.length){
-            
+            console.log(timer)
             clearInterval(timerID);
             endQuiz();
+            timer.textContent = timerInput
            
             
     
@@ -65,7 +67,6 @@ let questions = [{question: "What do you spawn with in a new world in Minecraft?
 
 ]
 currentQuestion = 0
-nextQuestion = 0
 renderQuestion();
 
 function renderQuestion(){
@@ -90,8 +91,13 @@ quizDiv.addEventListener("click" , function(event){
         // console.log("correct answer:" +  questions[currentQuestion].correctAnswer);
         if (eventEl.innerText === questions[currentQuestion].correctAnswer){
             correctAnswer.textContent =  "Correct Answer: " + questions[currentQuestion].correctAnswer; 
-
-        } else {
+            
+        }
+        if (currentQuestion === questions.length) {
+                
+            endQuiz();
+        }
+        else {
             correctAnswer.textContent =  "Wrong Answer"
             timer -= 10;
 
