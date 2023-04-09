@@ -24,6 +24,7 @@ highScore.addEventListener("click", function(){
     startQuizB.classList.add("hide")
     highScorePage.classList.remove("hide")
     highScore.classList.add("hide")
+    highScoreInput.classList.add("hide")
 })
 
 highScorePage.addEventListener("click", function(){
@@ -32,6 +33,7 @@ highScorePage.addEventListener("click", function(){
     startQuizB.classList.remove("hide")
     highScore.classList.remove("hide")
     highScoreInput.classList.add("hide")
+    
 
 })
 
