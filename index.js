@@ -8,6 +8,7 @@ let questionButton4 = document.querySelector("#answer4");
 let timeE1 = document.querySelector("#timer");
 let correctAnswer = document.querySelector("#correctAnswer")
 let highScore = document.querySelector("#highScore")
+let highScoreInput = document.querySelector("#highScoreInput")
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 // Need help to start off the quiz with only a start button with some more added text then start the quiz and timer after that
@@ -106,6 +107,8 @@ quizDiv.addEventListener("click" , function(event){
     function endQuiz() {
         
         localStorage.setItem("highScores" , JSON.stringify([{"initials": "dre", "score": timer}]))
+        quizDiv.classList.add("hide")
+        highScoreInput.classList.remove("hide")
     }
 
 

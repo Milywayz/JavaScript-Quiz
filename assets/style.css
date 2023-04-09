@@ -1,10 +1,10 @@
 body{
-    background-color: lightblue;
+    background-color: #d5f4e6;
 }
 
 div button {
     border-style: solid;
-    background-color: firebrick;
+    background-color: #80ced6;
     color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 10px;
@@ -16,13 +16,13 @@ section  {
 }
 section h1 {
     font-size: 3em;
-    background-color: rgb(116, 116, 116);
-    margin: auto;
+    background-color: #80ced6;
+    margin: 0px;
 }
 
 section button{
     border-style: solid;
-    background-color: firebrick;
+    background-color: #80ced6;
     color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 10px;
@@ -34,3 +34,4 @@ section button{
 .hide {
     display: none;
 }
+
