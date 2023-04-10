@@ -23,7 +23,10 @@ highScore.addEventListener("click", function(){
     highScorePage.classList.remove("hide")
     highScore.classList.add("hide")
     highScoreInput.classList.add("hide")
-    localStorage.setItem(submitInitials.value , JSON.stringify([{HighScore}]))
+    enter.addEventListener("enter", function(){
+
+        localStorage.setItem(submitInitials.value , JSON.stringify([{HighScore}]))
+    })
 })
 
 highScorePage.addEventListener("click", function(){
