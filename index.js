@@ -16,19 +16,24 @@ let submitInitials = document.querySelector("#submitInitials")
 
 
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+let timer = 120
 
-
+// Displays Highscore page
 highScore.addEventListener("click", function(){
     startQuizB.classList.add("hide")
     highScorePage.classList.remove("hide")
     highScore.classList.add("hide")
     highScoreInput.classList.add("hide")
-    enter.addEventListener("enter", function(){
-
-        localStorage.setItem(submitInitials.value , JSON.stringify([{HighScore}]))
-    })
 })
-
+// let obj = {initials, timer}
+// Fix timer thats shown on page to be the one that turns into the score
+// turn them both into a string at once
+enter.addEventListener("click", function(){
+    console.log(submitInitials)
+    console.log(timer)
+    localStorage.setItem(submitInitials.value , JSON.stringify([{finalScore}]))
+})
+// Return to quiz Start
 highScorePage.addEventListener("click", function(){
 
     highScorePage.classList.add("hide")
@@ -38,7 +43,7 @@ highScorePage.addEventListener("click", function(){
 
 })
 
-
+// Starts the quiz
 startQuizB.addEventListener("click", function(){
 
     quizDiv.classList.remove("hide")
@@ -48,7 +53,6 @@ startQuizB.addEventListener("click", function(){
 
 })
 
-let timer = 120
 let timerID;
 
 function startTimer(){
@@ -104,8 +108,7 @@ function renderQuestion(){
 }
 
 
-// Need help showing the correctAnswer if you clicked the right answer 
-// Need help only removing 10sec if you click the wrong answer
+// Puts the questions on page
 quizDiv.addEventListener("click" , function(event){
     let eventEl = event.target
     
