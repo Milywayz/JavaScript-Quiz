@@ -23,7 +23,7 @@ highScore.addEventListener("click", function(){
     highScorePage.classList.remove("hide")
     highScore.classList.add("hide")
     highScoreInput.classList.add("hide")
-    localStorage.setItem("submitInitials" , JSON.stringify([{submitInitials}]))
+    localStorage.setItem(submitInitials.value , JSON.stringify([{HighScore}]))
 })
 
 highScorePage.addEventListener("click", function(){
@@ -93,6 +93,9 @@ function renderQuestion(){
     questionButton2.textContent = questions[currentQuestion].answers[1];
     questionButton3.textContent = questions[currentQuestion].answers[2];
     questionButton4.textContent = questions[currentQuestion].answers[3];
+    if (currentQuestion === questions.length - 1){
+        endQuiz()
+    }
     // console.log("correct answer:" + questions[currentQuestion].correctAnswer);
     
 }
@@ -109,9 +112,6 @@ quizDiv.addEventListener("click" , function(event){
         if (eventEl.innerText === questions[currentQuestion].correctAnswer){
             correctAnswer.textContent =  "Correct Answer: " + questions[currentQuestion].correctAnswer; 
             
-        }
-        if (currentQuestion === questions.length - 1){
-            endQuiz()
         }
         else {
             correctAnswer.textContent =  "Wrong Answer"
