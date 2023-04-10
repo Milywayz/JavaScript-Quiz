@@ -11,13 +11,11 @@ let highScore = document.querySelector("#highScore")
 let highScoreInput = document.querySelector("#highScoreInput")
 let timerInput = document.querySelector("#timerInput")
 let highScorePage = document.querySelector("#highScorePage")
+let enter = document.querySelector("#enter")
+let submitInitials = document.querySelector("#submitInitials")
+
 
 // let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-
-// Need help to start off the quiz with only a start button with some more added text then start the quiz and timer after that
-// Need help switching and adding a high score page
-// Need help adding local storage when you enter high scores
-// If there is time then I would want some help add css into java for all of this 
 
 
 highScore.addEventListener("click", function(){
@@ -25,6 +23,7 @@ highScore.addEventListener("click", function(){
     highScorePage.classList.remove("hide")
     highScore.classList.add("hide")
     highScoreInput.classList.add("hide")
+    localStorage.setItem("submitInitials" , JSON.stringify([{submitInitials}]))
 })
 
 highScorePage.addEventListener("click", function(){
@@ -33,10 +32,8 @@ highScorePage.addEventListener("click", function(){
     startQuizB.classList.remove("hide")
     highScore.classList.remove("hide")
     highScoreInput.classList.add("hide")
-    
 
 })
-
 
 
 startQuizB.addEventListener("click", function(){
@@ -65,7 +62,6 @@ function startTimer(){
             clearInterval(timerID);
             endQuiz();
             timer.textContent = timerInput
-           
             
     
         }
@@ -114,6 +110,9 @@ quizDiv.addEventListener("click" , function(event){
             correctAnswer.textContent =  "Correct Answer: " + questions[currentQuestion].correctAnswer; 
             
         }
+        if (currentQuestion === questions.length - 1){
+            endQuiz()
+        }
         else {
             correctAnswer.textContent =  "Wrong Answer"
             timer -= 10;
@@ -128,8 +127,9 @@ quizDiv.addEventListener("click" , function(event){
 })
 
     function endQuiz() {
-        
-        localStorage.setItem("highScores" , JSON.stringify([{"initials": "dre", "score": timer}]))
+
+        timerInput.textContent = "Your score is: " +timer
+        localStorage.setItem("highScores" , JSON.stringify([{timer}]))
         quizDiv.classList.add("hide")
         highScoreInput.classList.remove("hide")
         highScorePage.classList.add("hide")
