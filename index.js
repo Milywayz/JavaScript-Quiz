@@ -53,7 +53,7 @@ startQuizB.addEventListener("click", function(){
     
 })
 
-// Submitting the initials and score to the highscore page
+// Submitting the initials and score to the high score page
 enter.addEventListener("click", function (event){
     event.preventDefault();
     let playerScore = {
@@ -81,9 +81,6 @@ function renderScore(){
          
     }
 
-    // document.getElementById("highScores").appendChild = localStorage.getItem("highScores");
-
-    
 }
 
 
@@ -141,8 +138,6 @@ function renderQuestion(){
     if (currentQuestion === questions.length - 1){
         endQuiz()
     }
-    
-    
 }
 
 
