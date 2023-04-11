@@ -15,23 +15,23 @@ let enter = document.querySelector("#enter")
 let submitInitials = document.querySelector("#submitInitials")
 
 
-// let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+let highScores = JSON.parse(localStorage.getItem("highScores")) || []
 let timer = 120
 
-// Displays Highscore page
+// Displays High Score page
 highScore.addEventListener("click", function(){
     startQuizB.classList.add("hide")
     highScorePage.classList.remove("hide")
     highScore.classList.add("hide")
     highScoreInput.classList.add("hide")
+    highScores.textContent = ("highScores")
 })
-// let obj = {initials, timer}
-// Fix timer thats shown on page to be the one that turns into the score
-// turn them both into a string at once
+
 enter.addEventListener("click", function(){
     console.log(submitInitials)
     console.log(timer)
-    localStorage.setItem(submitInitials.value , JSON.stringify([{finalScore}]))
+    timerInput.textContent = "Your score is...: " +timer
 })
 // Return to quiz Start
 highScorePage.addEventListener("click", function(){
@@ -53,8 +53,31 @@ startQuizB.addEventListener("click", function(){
 
 })
 
-let timerID;
+enter.addEventListener("click", function (event){
+    event.preventDefault();
+    let playerScore = {
+        initials: submitInitials.value,
+        timer: timer,
+    }
+     highScores.push(playerScore)
+     localStorage.setItem("highScores", JSON.stringify(highScores));
+     renderScore();
+    
 
+})
+
+function renderScore(){
+    recentScore = JSON.parse(localStorage.getItem("nameScores"));
+    if (recentScore !== null){
+        document.querySelector("#nameScores").textContent = "not available"
+
+    }
+}
+    
+
+
+let timerID;
+// timer and score for the quiz
 function startTimer(){
     
     timeE1.textContent = timer;
@@ -77,7 +100,7 @@ function startTimer(){
     }, 1000)
 }
 
-
+// question object to display
 let questions = [{question: "What do you spawn with in a new world in Minecraft?" , answers: ["A Wooden Pickaxe" , "An Stone Axe" , "1 Piece of Bread" , "Nothing"], correctAnswer: "Nothing" },
                 {question: "How many hearts of damage do you take when you fall 10 blocks in Minecraft with no protection?" , answers: ["2 Full Hearts" , "1 Full Hearts and a Half" , "3 Full Hearts and a Half" , "3 Full Hearts"], correctAnswer: "3 Full Hearts and a Half" },
                 {question: "What is Minecraft's rarest biome?" , answers: ["Ice Spikes Biome" , "Bamboo Jungle Biome" , "Mesa Biome" , "Mushroom Fields Biome"], correctAnswer: "Mushroom Fields Biome" },
@@ -92,7 +115,7 @@ let questions = [{question: "What do you spawn with in a new world in Minecraft?
 ]
 currentQuestion = 0
 renderQuestion();
-
+// Renders the questions and answer choices onto the page
 function renderQuestion(){
     
     question.textContent = questions[currentQuestion].question
@@ -134,8 +157,6 @@ quizDiv.addEventListener("click" , function(event){
 
     function endQuiz() {
 
-        timerInput.textContent = "Your score is: " +timer
-        localStorage.setItem("highScores" , JSON.stringify([{timer}]))
         quizDiv.classList.add("hide")
         highScoreInput.classList.remove("hide")
         highScorePage.classList.add("hide")
