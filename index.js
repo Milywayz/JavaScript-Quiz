@@ -18,6 +18,7 @@ let submitInitials = document.querySelector("#submitInitials")
 
 let highScores = JSON.parse(localStorage.getItem("highScores")) || []
 let timer = 120
+highScores.textContent = ("highScores")
 
 // Displays High Score page
 highScore.addEventListener("click", function(){
@@ -25,13 +26,12 @@ highScore.addEventListener("click", function(){
     highScorePage.classList.remove("hide")
     highScore.classList.add("hide")
     highScoreInput.classList.add("hide")
-    highScores.textContent = ("highScores")
 })
 
 enter.addEventListener("click", function(){
     console.log(submitInitials)
     console.log(timer)
-    timerInput.textContent = "Your score is...: " +timer
+    timerInput.textContent = "Your score is: " +timer
 })
 // Return to quiz Start
 highScorePage.addEventListener("click", function(){
@@ -65,6 +65,7 @@ enter.addEventListener("click", function (event){
     
 
 })
+
 
 function renderScore(){
     recentScore = JSON.parse(localStorage.getItem("nameScores"));
