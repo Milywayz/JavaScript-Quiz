@@ -1,7 +1,8 @@
+/* General CSS */
 body{
     background-color: #d5f4e6;
 }
-
+/* Button Styling */
 button {
     border-style: solid;
     background-color: #80ced6;
@@ -10,6 +11,12 @@ button {
     border-radius: 10px;
     display: block;
 }
+section button{
+    margin: auto;
+    display: block;
+
+}
+/* Main Styling of the page */
 section  {
     text-align: center;
 }
@@ -25,12 +32,7 @@ h3{
     text-align: center;
 }
 
-section button{
-    margin: auto;
-    display: block;
-
-}
-
+/* Hides displays */
 .hide {
     display: none;
 }

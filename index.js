@@ -1,4 +1,4 @@
-
+// Variables and querySelectors to select what I want to change/work on
 let startQuizB = document.querySelector("#startQuiz")
 let quizDiv = document.querySelector("#quiz");
 let questionButton1 = document.querySelector("#answer1");
@@ -13,9 +13,6 @@ let timerInput = document.querySelector("#timerInput")
 let highScorePage = document.querySelector("#highScorePage")
 let enter = document.querySelector("#enter")
 let submitInitials = document.querySelector("#submitInitials")
-
-
-
 let highScores = JSON.parse(localStorage.getItem("highScores")) || []
 let timer = 120
 highScores.textContent = ("highScores")
@@ -28,7 +25,7 @@ highScore.addEventListener("click", function(){
     highScore.classList.add("hide")
     highScoreInput.classList.add("hide")
 })
-
+// Putting your time on the page when you submit it
 enter.addEventListener("click", function(){
     console.log(submitInitials)
     console.log(timer)
@@ -54,6 +51,7 @@ startQuizB.addEventListener("click", function(){
     
 })
 
+// Submitting the initials and score to the highscore page
 enter.addEventListener("click", function (event){
     event.preventDefault();
     let playerScore = {
@@ -63,25 +61,25 @@ enter.addEventListener("click", function (event){
     highScores.push(playerScore)
     localStorage.setItem("highScores", JSON.stringify(highScores));
     document.getElementById("highScores").innerHTML = localStorage.getItem("highScores");
+    function renderScore(){
+        recentScore = JSON.parse(localStorage.getItem("nameScores"));
+        if (recentScore !== null){
+            document.querySelector("#nameScores").textContent = "not available"
+            
+        }
+        
+    }
     renderScore();
     
     
 })
 
 
-function renderScore(){
-    recentScore = JSON.parse(localStorage.getItem("nameScores"));
-    if (recentScore !== null){
-        document.querySelector("#nameScores").textContent = "not available"
-        
-    }
-    
-}
     
 
 
-let timerID;
 // timer and score for the quiz
+let timerID;
 function startTimer(){
     
     timeE1.textContent = timer;
@@ -92,14 +90,14 @@ function startTimer(){
         timeE1.textContent = timer;
 
         if (timer <= 0 || currentQuestion === questions.length){
-            console.log(timer)
+            
             clearInterval(timerID);
             endQuiz();
             timer.textContent = timerInput
             
     
         }
-        //console.log(timer);
+        
     
     }, 1000)
 }
@@ -117,8 +115,10 @@ let questions = [{question: "What do you spawn with in a new world in Minecraft?
                 {question: "What item do you give frogs in Minecraft for breeding?" , answers: ["Lily Pads" , "Seeds" , "Spore Blossoms" , "Slime Balls"], correctAnswer: "Slime Balls" }
 
 ]
+//Variables and putting calling the function to display the questions
 currentQuestion = 0
 renderQuestion();
+
 // Renders the questions and answer choices onto the page
 function renderQuestion(){
     
@@ -130,7 +130,7 @@ function renderQuestion(){
     if (currentQuestion === questions.length - 1){
         endQuiz()
     }
-    // console.log("correct answer:" + questions[currentQuestion].correctAnswer);
+    
     
 }
 
@@ -140,8 +140,6 @@ quizDiv.addEventListener("click" , function(event){
     let eventEl = event.target
     
     if(eventEl.matches("button")){
-        // console.log("clicked!")
-        // console.log("correct answer:" +  questions[currentQuestion].correctAnswer);
         if (eventEl.innerText === questions[currentQuestion].correctAnswer){
             correctAnswer.textContent =  "Correct Answer: " + questions[currentQuestion].correctAnswer; 
             
@@ -158,7 +156,7 @@ quizDiv.addEventListener("click" , function(event){
     
     
 })
-
+    // Ends the quiz if time runs out or if you answer the last question
     function endQuiz() {
 
         quizDiv.classList.add("hide")
@@ -172,4 +170,4 @@ quizDiv.addEventListener("click" , function(event){
 
 
 
-// some button that saves
+
