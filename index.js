@@ -29,8 +29,6 @@ highScore.addEventListener("click", function(){
 })
 // Putting your time on the page when you submit it
 enter.addEventListener("click", function(){
-    console.log(submitInitials)
-    console.log(timer)
     timerInput.textContent = "Your score is: " +timer
 })
 // Return to quiz Start
