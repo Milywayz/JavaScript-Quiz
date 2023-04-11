@@ -14,7 +14,9 @@ let highScorePage = document.querySelector("#highScorePage")
 let enter = document.querySelector("#enter")
 let submitInitials = document.querySelector("#submitInitials")
 let highScores = JSON.parse(localStorage.getItem("highScores")) || []
+let ul = document.querySelector(".showScores")
 let timer = 120
+let timerID;
 highScores.textContent = ("highScores")
 
 
@@ -60,26 +62,34 @@ enter.addEventListener("click", function (event){
     }
     highScores.push(playerScore)
     localStorage.setItem("highScores", JSON.stringify(highScores));
-    document.getElementById("highScores").innerHTML = localStorage.getItem("highScores");
-    function renderScore(){
-        recentScore = JSON.parse(localStorage.getItem("nameScores"));
-        if (recentScore !== null){
-            document.querySelector("#nameScores").textContent = "not available"
-            
-        }
-        
-    }
     renderScore();
     
     
 })
 
+function renderScore(){
+    
+    
+    for (let i = 0; i < highScores.length; i++) {
+        
+        let liScore = document.createElement("li");
+
+        liScore.textContent = highScores[i].initials + "-" + highScores[i].timer
+
+
+        ul.appendChild(liScore)
+         
+    }
+
+    // document.getElementById("highScores").appendChild = localStorage.getItem("highScores");
 
     
+}
+
+
 
 
 // timer and score for the quiz
-let timerID;
 function startTimer(){
     
     timeE1.textContent = timer;
