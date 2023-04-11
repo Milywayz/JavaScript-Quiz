@@ -20,6 +20,7 @@ let highScores = JSON.parse(localStorage.getItem("highScores")) || []
 let timer = 120
 highScores.textContent = ("highScores")
 
+
 // Displays High Score page
 highScore.addEventListener("click", function(){
     startQuizB.classList.add("hide")
@@ -35,22 +36,22 @@ enter.addEventListener("click", function(){
 })
 // Return to quiz Start
 highScorePage.addEventListener("click", function(){
-
+    
     highScorePage.classList.add("hide")
     startQuizB.classList.remove("hide")
     highScore.classList.remove("hide")
     highScoreInput.classList.add("hide")
-
+    
 })
 
 // Starts the quiz
 startQuizB.addEventListener("click", function(){
-
+    
     quizDiv.classList.remove("hide")
     startQuizB.classList.add("hide")
     startTimer();
-   
-
+    
+    
 })
 
 enter.addEventListener("click", function (event){
@@ -59,11 +60,12 @@ enter.addEventListener("click", function (event){
         initials: submitInitials.value,
         timer: timer,
     }
-     highScores.push(playerScore)
-     localStorage.setItem("highScores", JSON.stringify(highScores));
-     renderScore();
+    highScores.push(playerScore)
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+    document.getElementById("highScores").innerHTML = localStorage.getItem("highScores");
+    renderScore();
     
-
+    
 })
 
 
@@ -71,8 +73,9 @@ function renderScore(){
     recentScore = JSON.parse(localStorage.getItem("nameScores"));
     if (recentScore !== null){
         document.querySelector("#nameScores").textContent = "not available"
-
+        
     }
+    
 }
     
 
