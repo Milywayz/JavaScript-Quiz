@@ -25,6 +25,9 @@ Quiz Section
 Finished the Quiz
 ![Alt text](./assets/Finish-Image.png)
 
+High Score Page
+![Alt text](./assets/HighScore-page.png)
+
    
 ## License
 
